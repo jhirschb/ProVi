@@ -1,0 +1,4 @@
+import {Application,AppSettings,StatusReport} from './types'; import {defaultSettings} from './domain';
+export interface StorageRepository{load():Promise<{applications:Application[];reports:StatusReport[];settings:AppSettings}>;save(data:{applications:Application[];reports:StatusReport[];settings:AppSettings}):Promise<void>;clear():Promise<void>}
+const KEY='provi-status-reports-v1';
+export class LocalStorageRepository implements StorageRepository{async load(){try{return JSON.parse(localStorage.getItem(KEY)||'null')||{applications:[],reports:[],settings:defaultSettings}}catch{return{applications:[],reports:[],settings:defaultSettings}}} async save(data:{applications:Application[];reports:StatusReport[];settings:AppSettings}){localStorage.setItem(KEY,JSON.stringify(data))} async clear(){localStorage.removeItem(KEY)}}

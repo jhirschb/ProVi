@@ -1,7 +1,6 @@
+= Spezifikation: Statusreport-Webanwendung für Softwareanwendungen
 
-# Spezifikation: Statusreport-Webanwendung für Softwareanwendungen
-
-## 1. Ziel
+== 1. Ziel
 
 Es soll eine rein clientseitige Webanwendung entwickelt werden, mit der Statusreports für mehrere Softwareanwendungen erstellt, verwaltet und visualisiert werden können.
 
@@ -17,9 +16,9 @@ Die Anwendung soll mehrere betreute Softwareanwendungen unterstützen.
 
 ---
 
-# 2. Rahmenbedingungen
+= 2. Rahmenbedingungen
 
-## 2.1 Technische Grundsätze
+== 2.1 Technische Grundsätze
 
 Die Anwendung muss:
 
@@ -36,7 +35,7 @@ Die Anwendung soll über statisches Hosting bereitgestellt werden.
 
 
 
-## 2.2 Empfohlene Architektur
+== 2.2 Empfohlene Architektur
 
 Empfohlene Umsetzung:
 
@@ -53,11 +52,11 @@ Der Coding Agent darf ein geeignetes modernes Frontend-Framework verwenden. Die 
 
 ---
 
-# 3. Benutzerrollen
+= 3. Benutzerrollen
 
 In der ersten Version existiert nur eine lokale Benutzerrolle:
 
-## Report-Editor
+== Report-Editor
 
 Der Benutzer kann:
 
@@ -77,9 +76,9 @@ Eine Benutzer- und Rechteverwaltung ist nicht Bestandteil der ersten Version.
 
 ---
 
-# 4. Fachliche Begriffe
+= 4. Fachliche Begriffe
 
-## 4.1 Anwendung
+== 4.1 Anwendung
 
 Eine Anwendung repräsentiert ein betreutes Softwaresystem, Produkt oder Projekt.
 
@@ -90,13 +89,13 @@ Beispiele:
 * mobile Vertriebsanwendung,
 * internes Datenanalysewerkzeug.
 
-## 4.2 Statusreport
+== 4.2 Statusreport
 
 Ein Statusreport bildet den Zustand einer Anwendung zu einem bestimmten Berichtsdatum ab.
 
 Eine Anwendung kann mehrere Statusreports besitzen. Frühere Reports müssen erhalten bleiben, damit Entwicklungen nachvollzogen werden können.
 
-## 4.3 Lifecyclephase
+== 4.3 Lifecyclephase
 
 Eine Anwendung befindet sich zum Berichtszeitpunkt in einer primären Lifecyclephase.
 
@@ -111,7 +110,7 @@ Vordefinierte Phasen:
 7. Weiterentwicklung/Betrieb
 
 
-## 4.4 Ressourcenstatus
+== 4.4 Ressourcenstatus
 
 Der Ressourcenstatus beschreibt, ob für die Anwendung ausreichend Ressourcen zur Verfügung stehen.
 
@@ -129,7 +128,7 @@ Jede Kategorie besitzt:
 * eine Kurzbegründung,
 * optional einen Trend.
 
-## 4.5 Statuswerte
+== 4.5 Statuswerte
 
 Für Ressourcen und andere bewertete Bereiche gelten grundsätzlich folgende Statuswerte:
 
@@ -140,7 +139,7 @@ Für Ressourcen und andere bewertete Bereiche gelten grundsätzlich folgende Sta
 
 Die Benutzeroberfläche darf sich nicht ausschließlich auf Farben verlassen. Zusätzlich müssen Symbole und Textbezeichnungen angezeigt werden.
 
-## 4.6 Trendwerte
+== 4.6 Trendwerte
 
 Mögliche Trends:
 
@@ -151,9 +150,9 @@ Mögliche Trends:
 
 ---
 
-# 5. Funktionsumfang
+= 5. Funktionsumfang
 
-## 5.1 Übersichtsseite
+== 5.1 Übersichtsseite
 
 Die Startseite zeigt alle verwalteten Anwendungen.
 
@@ -174,7 +173,7 @@ Darstellungsformen:
 
 Die gewählte Ansicht soll lokal gespeichert werden.
 
-### Funktionen
+=== Funktionen
 
 * neue Anwendung anlegen,
 * Anwendung öffnen,
@@ -190,7 +189,7 @@ Die gewählte Ansicht soll lokal gespeichert werden.
 
 ---
 
-## 5.2 Anwendung anlegen und bearbeiten
+== 5.2 Anwendung anlegen und bearbeiten
 
 Für eine Anwendung werden folgende Stammdaten unterstützt:
 
@@ -213,12 +212,12 @@ Die ID wird automatisch erzeugt und darf nachträglich nicht verändert werden.
 
 ---
 
-## 5.3 Statusreport erstellen
+== 5.3 Statusreport erstellen
 
 Für jede Anwendung kann ein neuer Statusreport erstellt werden.
 
 
-### Report-Metadaten
+=== Report-Metadaten
 
 * eindeutige Report-ID,
 * Anwendung-ID,
@@ -230,12 +229,12 @@ Für jede Anwendung kann ein neuer Statusreport erstellt werden.
 * optionaler Erstellername,
 * Status `draft` oder `final`.
 
-### Lifecycle
+=== Lifecycle
 
 * aktuelle Phase,
 * optionale Bemerkung,
 
-### Meilenstein
+=== Meilenstein
 
 * Titel,
 * Zieldatum,
@@ -243,7 +242,7 @@ Für jede Anwendung kann ein neuer Statusreport erstellt werden.
 * Status,
 * Kurzbeschreibung.
 
-### Ressourcen
+=== Ressourcen
 
 Für jede Ressourcenkategorie:
 
@@ -261,7 +260,7 @@ Ressourcenkategorien:
 * Betriebsstabilität.
 
 
-### Nächste Schritte
+=== Nächste Schritte
 
 Pro nächstem Schritt:
 
@@ -280,7 +279,7 @@ Statuswerte:
 * erledigt,
 * blockiert.
 
-### Freitext
+=== Freitext
 
 Optional:
 
@@ -292,29 +291,29 @@ Optional:
 ---
 
 
-# 6. Visualisierung 
+= 6. Visualisierung 
 
-## 6.1 Ziel der Visualisierung
+== 6.1 Ziel der Visualisierung
 
 Die Statuskarte soll den Report in einer spielerischen, aber professionell nutzbaren Darstellung zusammenfassen.
 
 Die Optik darf an ein Brettspiel erinnern, darf jedoch nicht kindlich oder unübersichtlich wirken.
 
-## 6.2 Hauptelemente
+== 6.2 Hauptelemente
 
 Die Statuskarte enthält mindestens:
 
-### Kopfbereich
+=== Kopfbereich
 
 * Anwendungsname,
 * verantwortliches Team,
 
-### Lifecycle-Spielbrett
+=== Lifecycle-Spielbrett
 
 Alle Phasen werden genannt, die aktuelle Phase wird deutlich markiert.
 
 
-### Ressourcenbereich
+=== Ressourcenbereich
 
 Für jede Ressourcenkategorie:
 
@@ -324,15 +323,15 @@ Für jede Ressourcenkategorie:
 * Trendindikator.
 
 
-### Nächste Schritte
+=== Nächste Schritte
 
 Anzeige der drei bis fünf wichtigsten nächsten Schritte.
 
-### Zielbereich
+=== Zielbereich
 
 Kurzer Satz mit dem wichtigsten Ziel bis zum nächsten Report.
 
-## 6.3 Darstellungsregeln
+== 6.3 Darstellungsregeln
 
 * Alle Inhalte müssen auch ohne Farberkennung verständlich sein.
 * Lange Texte müssen gekürzt dargestellt und vollständig per Tooltip oder Detailansicht verfügbar sein.
@@ -344,7 +343,7 @@ Kurzer Satz mit dem wichtigsten Ziel bis zum nächsten Report.
 
 ---
 
-# 7. Reporthistorie
+= 7. Reporthistorie
 
 Zu jeder Anwendung wird eine chronologisch sortierte Liste der Statusreports angezeigt.
 
@@ -366,7 +365,7 @@ Funktionen:
 * Report löschen,
 * zwei Reports vergleichen.
 
-## 7.1 Vergleich zweier Reports
+== 7.1 Vergleich zweier Reports
 
 Der Vergleich soll mindestens folgende Änderungen sichtbar machen:
 
@@ -387,9 +386,9 @@ Der Vergleich soll mindestens folgende Änderungen sichtbar machen:
 
 ---
 
-# 8. Lokale Datenspeicherung
+= 8. Lokale Datenspeicherung
 
-## 8.1 Persistenz
+== 8.1 Persistenz
 
 Die Anwendung speichert Daten standardmäßig in IndexedDB.
 
@@ -403,7 +402,7 @@ Zu speichern sind:
 
 Die Anwendung muss nach einem Neuladen des Browsers den vorherigen Zustand wiederherstellen.
 
-## 8.2 Autosave
+== 8.2 Autosave
 
 Formulare sollen automatisch lokal gespeichert werden.
 
@@ -414,7 +413,7 @@ Anforderungen:
 * Zustände `gespeichert`, `wird gespeichert`, `Fehler`,
 * Schutz vor unbeabsichtigtem Verlassen bei noch nicht gespeicherten Änderungen.
 
-## 8.3 Keine vertraulichen Daten
+== 8.3 Keine vertraulichen Daten
 
 Die Benutzeroberfläche soll einen Hinweis enthalten, dass die Daten lokal im Browser gespeichert werden und abhängig von den verwendeten Inhalten vertrauliche Informationen enthalten können.
 
@@ -422,9 +421,9 @@ Browserdaten können durch den Benutzer oder durch Richtlinien gelöscht werden.
 
 ---
 
-# 9. Datenexport
+= 9. Datenexport
 
-## 9.1 Vollständiger Export
+== 9.1 Vollständiger Export
 
 Der Benutzer kann den vollständigen Datenbestand als eine Datei exportieren.
 
@@ -438,7 +437,7 @@ Empfohlener Dateiname:
 
 `application-status-reports_YYYY-MM-DD_HH-mm.json`
 
-## 9.2 Exportumfang
+== 9.2 Exportumfang
 
 Der Export enthält:
 
@@ -464,13 +463,13 @@ Beispielstruktur:
 }
 ```
 
-## 9.3 Einzelner Anwendungsexport
+== 9.3 Einzelner Anwendungsexport
 
 Zusätzlich soll eine einzelne Anwendung einschließlich aller zugehörigen Reports exportiert werden können.
 
 Der Export muss dieselbe Dateistruktur verwenden. Der Umfang ist jedoch auf die ausgewählte Anwendung begrenzt.
 
-## 9.4 Reportexport
+== 9.4 Reportexport
 
 Ein einzelner Report soll separat exportiert werden können.
 
@@ -485,9 +484,9 @@ Der JSON-Export ist verpflichtend. Bild- und PDF-Export sind erwünscht, sofern 
 
 ---
 
-# 10. Datenimport
+= 10. Datenimport
 
-## 10.1 Dateiimport
+== 10.1 Dateiimport
 
 Der Benutzer kann eine zuvor exportierte JSON-Datei auswählen oder per Drag-and-drop importieren.
 
@@ -505,25 +504,25 @@ Zu prüfen sind:
 * ungültige Statuswerte,
 * ungültige Datumswerte.
 
-## 10.2 Importstrategien
+== 10.2 Importstrategien
 
 Vor der tatsächlichen Übernahme muss der Benutzer eine Strategie auswählen:
 
-### Gesamtdaten ersetzen
+=== Gesamtdaten ersetzen
 
 Alle lokal vorhandenen Anwendungen und Reports werden durch die Importdatei ersetzt.
 
 Vorher ist eine deutliche Warnung anzuzeigen.
 
-### Zusammenführen
+=== Zusammenführen
 
 Importierte Anwendungen und Reports werden mit den vorhandenen Daten zusammengeführt.
 
-### Nur neue Datensätze importieren
+=== Nur neue Datensätze importieren
 
 Datensätze mit bereits vorhandenen IDs werden übersprungen.
 
-## 10.3 Konfliktbehandlung
+== 10.3 Konfliktbehandlung
 
 Beim Zusammenführen können identische IDs auftreten.
 
@@ -536,7 +535,7 @@ Für jeden Konflikt müssen mindestens folgende Optionen verfügbar sein:
 
 Beim Anlegen als Kopie müssen neue IDs erzeugt und interne Referenzen angepasst werden.
 
-## 10.4 Importvorschau
+== 10.4 Importvorschau
 
 Vor der Übernahme zeigt die Anwendung:
 
@@ -550,7 +549,7 @@ Vor der Übernahme zeigt die Anwendung:
 
 Der Import wird erst nach ausdrücklicher Bestätigung ausgeführt.
 
-## 10.5 Fehlerbehandlung
+== 10.5 Fehlerbehandlung
 
 Ein fehlerhafter Import darf die vorhandenen lokalen Daten nicht verändern.
 
@@ -565,9 +564,9 @@ Der Import soll atomar erfolgen:
 
 ---
 
-# 11. Datenmodell
+= 11. Datenmodell
 
-## 11.1 Application
+== 11.1 Application
 
 ```ts
 interface Application {
@@ -590,7 +589,7 @@ interface Application {
 }
 ```
 
-## 11.2 StatusReport
+== 11.2 StatusReport
 
 ```ts
 type ReportStatus = "draft" | "final";
@@ -648,7 +647,7 @@ interface StatusReport {
 }
 ```
 
-## 11.3 LifecycleInformation
+== 11.3 LifecycleInformation
 
 ```ts
 interface LifecycleInformation {
@@ -659,7 +658,7 @@ interface LifecycleInformation {
 }
 ```
 
-## 11.4 Milestone
+== 11.4 Milestone
 
 ```ts
 interface Milestone {
@@ -672,7 +671,7 @@ interface Milestone {
 }
 ```
 
-## 11.5 ResourceAssessment
+== 11.5 ResourceAssessment
 
 ```ts
 type ResourceCategory =
@@ -693,7 +692,7 @@ interface ResourceAssessment {
 
 ```
 
-## 11.6 NextStep
+== 11.6 NextStep
 
 ```ts
 type NextStepStatus =
@@ -713,7 +712,7 @@ interface NextStep {
 }
 ```
 
-## 11.7 ExportPackage
+== 11.7 ExportPackage
 
 ```ts
 interface ExportPackage {
@@ -730,9 +729,9 @@ interface ExportPackage {
 
 ---
 
-# 12. Validierungsregeln
+= 12. Validierungsregeln
 
-## 12.1 Allgemein
+== 12.1 Allgemein
 
 * IDs müssen eindeutig sein.
 * Zeitstempel werden als ISO-8601-Zeichenketten gespeichert.
@@ -744,14 +743,14 @@ interface ExportPackage {
 * Reihenfolgen der nächsten Schritte müssen normalisiert werden.
 * Unbekannte Enum-Werte sind beim Import als Fehler zu behandeln.
 
-## 12.2 Datumsvalidierung
+== 12.2 Datumsvalidierung
 
 * Berichtsdatum ist verpflichtend.
 * Das Enddatum eines Berichtszeitraums darf nicht vor dem Startdatum liegen.
 * Ungültige Datumswerte müssen als Validierungsfehler angezeigt werden.
 * Vergangene Meilensteine mit weniger als 100 Prozent Fortschritt sollen eine Warnung auslösen.
 
-## 12.3 Löschregeln
+== 12.3 Löschregeln
 
 Beim Löschen einer Anwendung müssen die zugehörigen Reports berücksichtigt werden.
 
@@ -764,9 +763,9 @@ Ein stilles Löschen zugehöriger Reports ist nicht zulässig.
 
 ---
 
-# 13. Bedienoberfläche
+= 13. Bedienoberfläche
 
-## 13.1 Hauptnavigation
+== 13.1 Hauptnavigation
 
 Mindestens:
 
@@ -776,7 +775,7 @@ Mindestens:
 * Import/Export,
 * Einstellungen.
 
-## 13.2 Formulargestaltung
+== 13.2 Formulargestaltung
 
 * Felder logisch gruppieren.
 * Inline-Validierung verwenden.
@@ -786,7 +785,7 @@ Mindestens:
 * Änderungen automatisch speichern,
 * vor destruktiven Aktionen bestätigen lassen.
 
-## 13.3 Detailseite einer Anwendung
+== 13.3 Detailseite einer Anwendung
 
 Register oder Abschnitte:
 
@@ -795,18 +794,18 @@ Register oder Abschnitte:
 3. Reporthistorie
 4. Stammdaten
 
-## 13.4 Bearbeitungsmodus und Präsentationsmodus
+== 13.4 Bearbeitungsmodus und Präsentationsmodus
 
 Der Report benötigt zwei Modi:
 
-### Bearbeitungsmodus
+=== Bearbeitungsmodus
 
 * Formulareingaben,
 * Validierung,
 * Detailinformationen,
 * automatische Speicherung.
 
-### Präsentationsmodus
+=== Präsentationsmodus
 
 * Brettspiel-Statuskarte,
 * reduzierte Navigation,
@@ -816,7 +815,7 @@ Der Report benötigt zwei Modi:
 
 ---
 
-# 14. Barrierefreiheit
+= 14. Barrierefreiheit
 
 Die Anwendung muss mindestens folgende Anforderungen erfüllen:
 
@@ -832,21 +831,21 @@ Die Anwendung muss mindestens folgende Anforderungen erfüllen:
 
 ---
 
-# 15. Responsive Design
+= 15. Responsive Design
 
-## Desktop
+== Desktop
 
 * vollständige Brettspielkarte,
 * Karten- und Tabellenübersichten,
 * nebeneinander angeordnete Informationsbereiche.
 
-## Tablet
+== Tablet
 
 * Brettspielkarte darf umbrechen,
 * Formulare in ein oder zwei Spalten,
 * Navigation kompakt.
 
-## Smartphone
+== Smartphone
 
 * vertikale Darstellung,
 * horizontale Lifecycleleiste darf scrollbar sein,
@@ -855,7 +854,7 @@ Die Anwendung muss mindestens folgende Anforderungen erfüllen:
 
 ---
 
-# 16. Drucken und Exportieren der Statuskarte
+= 16. Drucken und Exportieren der Statuskarte
 
 Für den Präsentationsmodus muss ein eigenes Drucklayout existieren.
 
@@ -875,7 +874,7 @@ Optional kann die Statuskarte zusätzlich clientseitig als PNG erzeugt werden.
 
 ---
 
-# 17. Einstellungen
+= 17. Einstellungen
 
 Lokal speicherbare Einstellungen:
 
@@ -892,7 +891,7 @@ Die Anwendung soll auf Systemdarstellung reagieren, sofern keine explizite Auswa
 
 ---
 
-# 18. Fehler- und Ausnahmefälle
+= 18. Fehler- und Ausnahmefälle
 
 Folgende Situationen müssen behandelt werden:
 
@@ -913,7 +912,7 @@ Technische Fehlermeldungen dürfen zusätzlich in der Browserkonsole ausgegeben 
 
 ---
 
-# 19. Schema-Versionierung und Migration
+= 19. Schema-Versionierung und Migration
 
 Das Exportformat muss eine ganzzahlige `schemaVersion` besitzen.
 
@@ -928,7 +927,7 @@ Regeln:
 
 ---
 
-# 20. Datenschutz und Sicherheit
+= 20. Datenschutz und Sicherheit
 
 * Keine automatische Übertragung von Daten.
 * Keine Telemetrie ohne ausdrückliche Anforderung.
@@ -944,9 +943,9 @@ Da die Daten lokal im Browser liegen, stellt die Anwendung keine echte Zugriffsk
 
 ---
 
-# 21. Qualitätsanforderungen
+= 21. Qualitätsanforderungen
 
-## Performance
+== Performance
 
 * Start der Anwendung bei üblichen Datenmengen innerhalb weniger Sekunden.
 * Flüssige Bedienung bei mindestens 100 Anwendungen.
@@ -954,7 +953,7 @@ Da die Daten lokal im Browser liegen, stellt die Anwendung keine echte Zugriffsk
 * Such- und Filterergebnisse sollen ohne merkbare Verzögerung erscheinen.
 * Große Importdateien dürfen die Oberfläche nicht dauerhaft blockieren.
 
-## Wartbarkeit
+== Wartbarkeit
 
 * klare Trennung von Fachlogik, Persistenz und Darstellung,
 * typisierte Datenmodelle,
@@ -963,7 +962,7 @@ Da die Daten lokal im Browser liegen, stellt die Anwendung keine echte Zugriffsk
 * keine fachliche Logik ausschließlich in UI-Komponenten,
 * dokumentierte Import- und Exportlogik.
 
-## Testbarkeit
+== Testbarkeit
 
 * Fachlogik muss unabhängig von der Benutzeroberfläche testbar sein.
 * Persistenzzugriffe müssen abstrahiert werden.
@@ -971,9 +970,9 @@ Da die Daten lokal im Browser liegen, stellt die Anwendung keine echte Zugriffsk
 
 ---
 
-# 22. Tests
+= 22. Tests
 
-## 22.1 Unit-Tests
+== 22.1 Unit-Tests
 
 Mindestens für:
 
@@ -987,7 +986,7 @@ Mindestens für:
 * Datenmigration,
 * Reportvergleich.
 
-## 22.2 Integrationstests
+== 22.2 Integrationstests
 
 Mindestens:
 
@@ -1000,7 +999,7 @@ Mindestens:
 * fehlgeschlagener Import ohne Datenverlust,
 * Wiederherstellung nach Browser-Neuladen.
 
-## 22.3 End-to-End-Tests
+== 22.3 End-to-End-Tests
 
 Mindestens folgende Szenarien:
 
@@ -1022,7 +1021,7 @@ Weiteres Szenario:
 
 ---
 
-# 23. Abnahmekriterien für Version 1
+= 23. Abnahmekriterien für Version 1
 
 Die erste Version gilt als abnahmefähig, wenn alle folgenden Punkte erfüllt sind:
 
@@ -1045,7 +1044,7 @@ Die erste Version gilt als abnahmefähig, wenn alle folgenden Punkte erfüllt si
 
 ---
 
-# 24. Nicht Bestandteil von Version 1
+= 24. Nicht Bestandteil von Version 1
 
 Folgende Funktionen sind ausdrücklich nicht Bestandteil der ersten Version:
 
@@ -1066,9 +1065,9 @@ Die Architektur soll spätere Erweiterungen nicht unnötig verhindern. Version 1
 
 ---
 
-# 25. Empfohlene Umsetzungsreihenfolge
+= 25. Empfohlene Umsetzungsreihenfolge
 
-## Phase 1: Grundgerüst
+== Phase 1: Grundgerüst
 
 * Projektstruktur,
 * Routing,
@@ -1076,7 +1075,7 @@ Die Architektur soll spätere Erweiterungen nicht unnötig verhindern. Version 1
 * lokale Persistenz,
 * Basislayout.
 
-## Phase 2: Anwendungsverwaltung
+== Phase 2: Anwendungsverwaltung
 
 * Übersicht,
 * Suche,
@@ -1086,7 +1085,7 @@ Die Architektur soll spätere Erweiterungen nicht unnötig verhindern. Version 1
 * Archivieren,
 * Löschen.
 
-## Phase 3: Reporterfassung
+== Phase 3: Reporterfassung
 
 * Reportformular,
 * Lifecycle,
@@ -1097,7 +1096,7 @@ Die Architektur soll spätere Erweiterungen nicht unnötig verhindern. Version 1
 * nächste Schritte,
 * Autosave.
 
-## Phase 4: Visualisierung
+== Phase 4: Visualisierung
 
 * Brettspiel-Lifecyclepfad,
 * Ressourcenkarte,
@@ -1105,7 +1104,7 @@ Die Architektur soll spätere Erweiterungen nicht unnötig verhindern. Version 1
 * Risiko- und Entscheidungskarte,
 * Präsentationsmodus.
 
-## Phase 5: Import und Export
+== Phase 5: Import und Export
 
 * vollständiger JSON-Export,
 * Anwendungsexport,
@@ -1114,13 +1113,13 @@ Die Architektur soll spätere Erweiterungen nicht unnötig verhindern. Version 1
 * Konfliktbehandlung,
 * atomarer Import.
 
-## Phase 6: Historie und Vergleich
+== Phase 6: Historie und Vergleich
 
 * Reporthistorie,
 * Reportfortschreibung,
 * Vergleichsansicht.
 
-## Phase 7: Qualität
+== Phase 7: Qualität
 
 * responsive Optimierung,
 * Barrierefreiheit,
@@ -1131,7 +1130,7 @@ Die Architektur soll spätere Erweiterungen nicht unnötig verhindern. Version 1
 
 ---
 
-# 26. Arbeitsauftrag an den Coding Agenten
+= 26. Arbeitsauftrag an den Coding Agenten
 
 Implementiere die beschriebene Webanwendung als statisch deploybare Single Page Application.
 

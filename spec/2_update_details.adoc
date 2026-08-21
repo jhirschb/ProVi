@@ -1,0 +1,25 @@
+= Änderungen
+
+== Allgemeine Änderungen
+
+* Ändere die Lifecyclephasen zu
+** Idee
+** Planung und Entwurf
+** Implementierung
+** Rollout & Integration
+** Betrieb
+* Ergänze ein Attribut "Stage" mit den Werten
+** Lokal
+** Dev
+** Test
+** QA
+** Prod
+
+== Ansicht "Anwendungen"
+
+* Es gibt einen Bug: Anwendungen können nicht bearbeitet oder gelöscht werden, implementiere diese Funktionen.
+* ordne die Karten in Spalten an, pro Lifecyclephase eine Spalte, die Anwendungen werden ihrer Phase entsprechend in die Spalten angeordnet. 
+
+== Ansicht "Historie"
+
+* Beim Anlegen einer neuen Report Version sollen die Daten aus der alten Version übernommen werden.
