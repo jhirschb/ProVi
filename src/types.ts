@@ -5,7 +5,7 @@ export type TrafficLightStatus='green'|'yellow'|'red'|'gray';
 export type Trend='improving'|'stable'|'worsening'|'unknown';
 export type ResourceCategory='personnel'|'time'|'budget'|'knowHow'|'operationalStability';
 export type NextStepStatus='open'|'inProgress'|'completed'|'blocked';
-export interface Application { id:string; name:string; shortName:string; description?:string; businessOwner?:string; technicalOwner?:string; responsiblePerson?:string; details?:string; contact?:string; stage:ApplicationStage; tags:string[]; archived:boolean; tileBorderColor?:string; tileBorderWidth?:number; tileBackground?:string; icon?:string; createdAt:string; updatedAt:string; }
+export interface Application { id:string; name:string; shortName:string; description?:string; businessOwner?:string; technicalOwner?:string; responsiblePerson?:string; details?:string; contact?:string; stage:ApplicationStage; lifecyclePhase?:LifecyclePhase; tags:string[]; archived:boolean; tileBorderColor?:string; tileBorderWidth?:number; tileBackground?:string; icon?:string; createdAt:string; updatedAt:string; }
 export interface LifecycleInformation { currentPhase:LifecyclePhase; nextPhase?:LifecyclePhase; progress?:number; explanation?:string; }
 export interface Milestone { id:string; title:string; description?:string; targetDate?:string; progress:number; status:TrafficLightStatus; }
 export interface ResourceAssessment { category:ResourceCategory; status:TrafficLightStatus; summary:string; details?:string; trend:Trend; }
