@@ -1,5 +1,5 @@
 import {Application,ApplicationStage,ExportPackage,LifecyclePhase,ResourceAssessment,SCHEMA_VERSION,StatusReport,TrafficLightStatus,AppSettings,uid,now} from './types';
-export const defaultSettings:AppSettings={view:'cards',showArchived:false,sort:'updated',author:'',theme:'system',overviewTitle:'Anwendungen',primaryColor:'#087f73',backgroundColor:'#f5f7f8',iconSize:20};
+export const defaultSettings:AppSettings={view:'cards',showArchived:false,sort:'updated',author:'',theme:'system',overviewTitle:'Anwendungen',overviewDescription:'Betreute Systeme',primaryColor:'#087f73',backgroundColor:'#f5f7f8',iconSize:20};
 const validStages:ApplicationStage[]=['local','dev','test','qa','prod'];
 export function normalizePhase(value:unknown):LifecyclePhase{if(value==='planning'||value==='design')return'planningDesign'; if(value==='test')return'rolloutIntegration'; if(value==='idea'||value==='planningDesign'||value==='implementation'||value==='rolloutIntegration'||value==='operations')return value; return'idea';}
 export function normalizeApplication(a:Application):Application{const legacy=a as Application&{team?:string};return{...a,details:a.details||legacy.team||'',stage:validStages.includes(a.stage)?a.stage:'dev',tags:a.tags||[],archived:Boolean(a.archived),tileBorderWidth:typeof a.tileBorderWidth==='number'&&a.tileBorderWidth>=0?a.tileBorderWidth:undefined};}
